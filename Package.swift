@@ -5,7 +5,7 @@ import PackageDescription
 
 let package = Package(
     name: "Swiftic",
-    platforms: [.macOS(.v14), .iOS(.v16), .watchOS(.v9), .tvOS(.v16)],
+    platforms: [.macOS(.v13), .iOS(.v16), .watchOS(.v9), .tvOS(.v16)],
     products: [
         .library(
             name: "Swiftic",
