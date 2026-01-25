@@ -45,32 +45,3 @@ public func expect<T, E: Error>(
 ) throws(E) {
     try expect(expression() == nil, error: error(), file: file, line: line)
 }
-
-
-// MARK: Playgrounds
-
-import Playgrounds
-
-#Playground {
-    enum Err: Error {
-        case some
-    }
-
-    do {
-        let foo: Int? = 100
-        let bar = require(foo)
-    }
-
-    do {
-        let foo: Int? = 100
-        let bar = try require(foo, error: Err.some)
-    }
-    
-    do {
-        try require(true, error: Err.some)
-    }
-
-    do {
-        try expect(nil: nil, as: Bool.self, error: Err.some)
-    }
-}

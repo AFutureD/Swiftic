@@ -33,18 +33,3 @@ public func ?? <T, E: Error>(
     }
     return ret
 }
-
-// MARK: Playgrounds
-
-import Playgrounds
-
-#Playground {
-    enum Err: Error {
-        case some
-    }
-
-    do {
-        let foo: Int? = 1
-        let _: Int = try foo ?? Err.some
-    }
-}
