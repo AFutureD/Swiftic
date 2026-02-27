@@ -28,3 +28,16 @@ public func |> <T, U>(value: T?, function: (T) -> U?) -> U? {
     guard let value else { return nil }
     return function(value)
 }
+
+public func |> <T, U, E>(
+    value: T?,
+    function: (T) async throws(E) -> U
+) async throws(E) -> U? {
+    guard let value else { return nil }
+    return try await function(value)
+}
+
+public func |> <T, U>(value: T?, function: (T) async -> U?) async -> U? {
+    guard let value else { return nil }
+    return await function(value)
+}
