@@ -84,6 +84,19 @@ dic[.age] = 30
 let name: String? = dic[.name] // Type-safe access
 ```
 
+### 6. Task Timeout
+Run async work with a hard timeout using either a duration or an absolute deadline.
+
+```swift
+do {
+    _ = try await Task.timeout(for: .milliseconds(250)) {
+        try await slowOperation()
+    }
+} catch is TimedOutError {
+    print("Operation timed out")
+}
+```
+
 ## Installation
 
 Add this package to your project using Swift Package Manager.
