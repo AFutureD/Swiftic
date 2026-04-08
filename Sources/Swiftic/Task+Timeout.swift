@@ -5,7 +5,7 @@
 //  Created by Huanan on 2026/4/7.
 //
 
-import Foundation.NSDate
+import Foundation
 
 /// An error thrown when a timed operation does not finish before its timeout expires.
 public struct TimedOutError: Error, Equatable {}
